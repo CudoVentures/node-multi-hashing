@@ -428,7 +428,7 @@ NAN_METHOD(cryptonight) {
         else if(info[1]->IsUint32())
             cn_variant = info[1]->ToUint32()->Uint32Value();
         else
-            return except("Argument 2 should be a boolean or uint32_t");
+            return THROW_ERROR_EXCEPTION("Argument 2 should be a boolean or uint32_t");
     }   
 
     Local<Object> target = info[0]->ToObject();
