@@ -423,10 +423,10 @@ NAN_METHOD(cryptonight) {
         return THROW_ERROR_EXCEPTION("You must provide one argument.");
     
     if (info.Length() >= 2) {
-        if(args[1]->IsBoolean())
-            fast = args[1]->ToBoolean()->BooleanValue();
-        else if(args[1]->IsUint32())
-            cn_variant = args[1]->ToUint32()->Uint32Value();
+        if(info[1]->IsBoolean())
+            fast = info[1]->ToBoolean()->BooleanValue();
+        else if(info[1]->IsUint32())
+            cn_variant = info[1]->ToUint32()->Uint32Value();
         else
             return except("Argument 2 should be a boolean or uint32_t");
     }   
