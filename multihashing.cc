@@ -468,7 +468,7 @@ NAN_METHOD(cryptonight_heavy) {
     
     uint32_t input_len = Buffer::Length(target);
 
-    if(input_len == 0 || input[0] >= 0x03)
+    if(input_len == 0 || input[0] >= 0x02)
     {
         cn_heavy::cn_pow_hash_v2 ctx;
         ctx.hash(input, input_len, output);
